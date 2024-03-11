@@ -28,7 +28,7 @@ R&D Solution Developer \\
 February 2024 - present
 
 **Australian National University, Canberra, ACT, Australia** \\
-Teaching Assitant \\
+Teaching Assistant \\
 2021 - 2023 \\
 Across 5 courses on 6 semesters.
 
