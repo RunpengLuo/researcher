@@ -1,5 +1,5 @@
-title: Researcher
-url: "https://ankitsultana.com"
+title: Runpeng (John) Luo
+url: "https://runpengluo.github.io"
 baseurl: "/researcher"
 
 markdown: kramdown
@@ -9,7 +9,7 @@ tracking_id: #
 
 footer: yes
 footer_url: "https://github.com/ankitsultana"
-footer_text: "Page design by Ankit Sultana"
+footer_text: "Built with Jekyll, using the Researcher theme."
 
 sass:
     style: compressed
@@ -19,6 +19,8 @@ nav:
  - name: "About"
    link: "/researcher/"
  - name: "Resume"
-   link: "resume.pdf"
+   link: "resume"
+ - name: "Publications"
+   link: "publications"
  - name: "Contact"
    link: "contact"

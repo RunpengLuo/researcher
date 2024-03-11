@@ -3,24 +3,6 @@ layout: default
 is_contact: true
 ---
 
-* Email: [foo@xyz.com](mailto:foo@xyz.com)
+You can always reach me at my [ANU e-mail](mailto:john.luo@anu.edu.au) or [personal e-mail](mailto:runpeng.luo@gmail.com), I check them regularly and try to be as responsive as possible.
 
-* Phone: [+91-123123](tel:+91-123123)
-
----
-
-## Mailing Address
-
-> 221B, Baker Street
->
-> London
->
-> United Kingdom
-
----
-
-## Social
-
-1. [Facebook](#)
-2. [Twitter](#)
-3. [Google+](#)
+I am on [GitHub](https://github.com/RunpengLuo), [Twitter](https://twitter.com/runpengluo), and [LinkedIn](https://www.linkedin.com/in/runpengluo). Feel free to reach out!
