@@ -1,6 +1,6 @@
 title: Runpeng (John) Luo
 url: "https://runpengluo.github.io"
-baseurl: "/researcher"
+baseurl: "/runpengluo"
 
 markdown: kramdown
 #ins_logo: "./bits-logo.png"
@@ -17,7 +17,7 @@ sass:
 
 nav:
  - name: "About"
-   link: "/researcher/"
+   link: "/runpengluo/"
  - name: "Resume"
    link: "resume"
  - name: "Publications"
