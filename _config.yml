@@ -22,5 +22,7 @@ nav:
    link: "resume"
  - name: "Publications"
    link: "publications"
+ - name: "Blogs"
+   link: "blogs"
  - name: "Contact"
    link: "contact"
