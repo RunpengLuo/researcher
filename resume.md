@@ -28,8 +28,17 @@ R&D Solution Developer \\
 February 2024 - present
 
 **Australian National University, Canberra, ACT, Australia** \\
-Teaching Assistant \\
+Technical Assistant, School of Biology \\
+October 2022 - present \\
+\\
+Summer Research Intern, School of Computing \\
+2021 summer, 2022 summer \\
+\\
+Teaching Assistant, School of Computing \\
 2021 - 2023 \\
 Across 5 courses on 6 semesters.
+
+## Talks
+- 27th Annual International Conference on Research in Computational Molecular Biology, (RECOMB 2023), [Link](https://www.youtube.com/watch?v=MHNAZ8OkyUI), Istanbul, Turkey, Apr 2023.
 
 
