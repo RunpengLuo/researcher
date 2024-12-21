@@ -11,7 +11,7 @@ For more details, feel free to check the [PDF](files/Runpeng_Luo_Curriculum_Vita
 **Princeton Univeristy, Princeton, NJ, USA** \\
 Doctor of Philosophy in Computer Science \\
 September 2024 - present \\
-1st Year Academic Advisor: [Dr. Ben Raphael](https://www.cs.princeton.edu/people/profile/braphael) and [Dr. Sneha D. Goenka](https://ece.princeton.edu/people/sneha-d-goenka)
+Advisors: TBD
 
 **Australian National University, Canberra, ACT, Australia** \\
 Bachelor of Advanced Computing (Research and Development) (Honours) \\
