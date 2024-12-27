@@ -20,6 +20,8 @@ nav:
    link: "/researcher/"
  - name: "Resume"
    link: "resume"
+ - name: "Softwares"
+   link: "softwares"
  - name: "Publications"
    link: "publications"
  - name: "Blogs"
