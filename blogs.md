@@ -6,7 +6,8 @@ I always want to record the things I’ve learned and the good books I’ve read
 
 * Favorite Textbooks
     1. Bioinformatics Algorithms (An Active Learning Approach) by Phillip Compeau & Pavel Pevzner
-    2. Combinatorial Optimization (Algorithms and Complexity) by Christos H. Papadimitriou & Kenneth Steiglitz
+    2. Convex Optimization by Stephen Boyd & Lieven Vandenberghe
+    3. Combinatorial Optimization (Algorithms and Complexity) by Christos H. Papadimitriou & Kenneth Steiglitz
 
 * Favorite Books
     1. The Why Cafe by John Strelecky
