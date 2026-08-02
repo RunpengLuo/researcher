@@ -1,4 +1,5 @@
 @import "vars";
+@import "theme";
 
 /*
  * Basic
@@ -8,15 +9,18 @@ html {
     height: 100%;
     margin: 0;
     padding: 0;
+    background: var(--bg);
 }
 body {
     margin: 0;
     font-family: "Inconsolata";
     height: 100%;
+    background: var(--bg);
+    color: var(--fg);
 }
 a {
     text-decoration: none;
-    color: $accent;
+    color: var(--accent);
 }
 a:hover {
     text-decoration: underline;
@@ -24,8 +28,7 @@ a:hover {
 hr {
     border: 0;
     height: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 1px solid var(--rule);
 }
 
 /*
@@ -34,8 +37,21 @@ hr {
 
 #author-name {
     font-size: 30px;
-    color: #272727;
+    color: var(--fg);
     display: inline-block;
+}
+#theme-toggle {
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 18px;
+    line-height: 1;
+    color: var(--accent);
+}
+.footer-link {
+    color: var(--fg);
 }
 .navbar {
     padding: 50px 0 50px 0;
@@ -129,3 +145,5 @@ hr {
 
 @import "typography";
 @import "tables";
+@import "syntax-light";
+@import "syntax-dark";
