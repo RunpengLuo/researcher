@@ -1,19 +1,39 @@
 title: Runpeng (John) Luo
+author: Runpeng (John) Luo
+description: >-
+  Personal site of Runpeng (John) Luo, PhD candidate in Computer Science at
+  Princeton University, working on algorithms for computational genomics.
 url: "https://runpengluo.github.io"
 baseurl: "/researcher"
 
 markdown: kramdown
-#ins_logo: "./bits-logo.png"
 
-tracking_id: #
+# GoatCounter site code: analytics load only when this is set (https://<code>.goatcounter.com)
+goatcounter_code: runpengluo
+
+profile_picture: "https://runpengluo.github.io/researcher/files/selfies.jpg"
+og_image: "https://runpengluo.github.io/researcher/files/selfies.jpg"
 
 footer: yes
 footer_url: "https://github.com/ankitsultana"
 footer_text: "Built with Jekyll, using the Researcher theme."
 
+plugins:
+  - jekyll-feed
+
+exclude:
+  - CLAUDE.md
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - scripts
+  - vendor
+
 sass:
     style: compressed
     sass_dir: _sass
+    sourcemap: never
 
 nav:
  - name: "About"

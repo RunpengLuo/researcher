@@ -1,0 +1,12 @@
+---
+layout: default
+---
+
+<h2>{{ page.title }}</h2>
+<h4>
+    {{ page.date | date: "%b %-d, %Y" }}{% if page.location %} at {{ page.location }}{% endif %}
+</h4>
+
+{{ content }}
+
+<p><a href="{{ site.baseurl }}/blogs">&larr; Back to blogs</a></p>

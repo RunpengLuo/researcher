@@ -1,60 +1,70 @@
-# Researcher
+# runpengluo.github.io/researcher
 
-### [Demo Website](http://ankitsultana.com/researcher)
+Personal academic website of Runpeng (John) Luo, built with [Jekyll](https://jekyllrb.com) and published by GitHub Pages from the `gh-pages` branch at <https://runpengluo.github.io/researcher>.
 
-A clean, single column, monospace resume template built for jekyll
+The design is derived from the [researcher](https://github.com/ankitsultana/researcher) theme by Ankit Sultana; the layouts in `_layouts/` and styles in `_sass/` are vendored into this repository, so no theme gem is used.
 
-### Installation
+## Table of Contents
 
-Simply fork the repository and edit away.
+- [Local development](#local-development)
+- [Content layout](#content-layout)
+- [Adding a blog post](#adding-a-blog-post)
+- [Analytics and visitor map](#analytics-and-visitor-map)
+- [License](#license)
 
-#### Installation via remote themes
+## Local development
 
-* Just setting `remote_theme: ankitsultana/researcher@gem` in `_config.yml` should work. Although in that case, I am not sure how
-you would build your site locally for testing. If you know how, open up an issue and let me know.
-* For more info, [refer this](https://blog.github.com/2017-11-29-use-any-theme-with-github-pages/).
+Ruby is managed with conda (the `compilers` package is required, otherwise the `eventmachine` native extension fails to build):
 
-### Customization
-
-* You can edit the `.md` (markdown) files as you see fit. You can also add some other markdown file, say `foo.md` in the root directory of the repository. It will then be accessible like so `{{ url of your website }}/foo`.
-
-* You can of course remove `contact.md` if you don't want it
-
-* To set the heading, edit the `title` variable in `_config.yml`
-
-* To edit the `links` mentioned on the navigation bar, you can edit `_config.yml`. For example:
-
-```
-nav:
- - name: "About"
-   link: "/researcher/"
- - name: "Resume"
-   link: "resume.pdf"
- - name: "Contact"
-   link: "contact"
+```sh
+mamba create -y -n jekyll -c conda-forge ruby compilers
+conda activate jekyll
+bundle install
+bundle exec jekyll serve --livereload   # http://127.0.0.1:4000/researcher/
 ```
 
-* You can change the accent (color of hyperlinks) by editing the `accent` variable in `_sass/vars.scss`
+`bundle exec jekyll build` writes the static site to `_site/`, which is ignored by git; GitHub Pages runs its own build on push.
 
-* You can setup google analytics, by setting `tracking_id` in `_config.yml`
+## Content layout
 
-* To add a profile picture, make sure to give the image tag the class `profile-picture`. In other words,do it like so:
+| Path | Purpose |
+| --- | --- |
+| `index.md`, `resume.md`, `publications.md`, `softwares.md`, `blogs.md`, `contact.md` | Pages; each renders at `/researcher/<name>` |
+| `_posts/` | Blog posts, listed automatically on the Blogs page |
+| `_layouts/` | `default.html` (site chrome) and `post.html` (post title and date) |
+| `_sass/`, `css/main.scss` | Styles; the hyperlink accent color is `$accent` in `_sass/vars.scss` |
+| `files/` | CV PDF, profile photo, and notes under `files/docs/` |
+| `_config.yml` | Site metadata and the `nav` list that drives the navigation bar |
 
-```html
-<img class="profile-picture" src="sherlock.jpg">
+Navigation entries come from `nav` in `_config.yml`. The entry named `About` is special-cased in `_layouts/default.html` and its `link` is used verbatim; every other entry is prefixed with the site URL and base URL.
+
+## Adding a blog post
+
+Create `_posts/YYYY-MM-DD-name.md` with front matter, and it appears on the Blogs page automatically:
+
+```yaml
+---
+layout: post
+title: "Post title"
+date: 2024-03-23
+location: Princeton, NJ, USA
+---
 ```
 
-* You can remove/customize the footer as you like by setting the
-appropriate variables in `_config.yml`
+## Analytics and visitor map
 
-* (New in v1.2.0) You can add institute logo at the top, by setting `ins_logo` in `_config.yml`. If you want
-to adjust the logo's size, try setting `max-height` in `#ins-logo` in file `./_sass/_style.scss` to the desired
-value
+Page views are counted by [GoatCounter](https://www.goatcounter.com) (cookie-free); the script loads only when `goatcounter_code` is set in `_config.yml`.
 
-![Institute Logo Image Sample](https://github.com/ankitsultana/assets/raw/master/ins-logo-sample.png)
+The visitor map on the Contact page is built from that data by `.github/workflows/deploy.yml`:
 
-**Note:** Customizing the accent color might cause merge conflicts if you later try to merge from `bk2dcradle/researcher` to fetch updates/patches etc. (applicable only if you have forked).
+1. A daily cron run calls `scripts/fetch_visitors.py`, which reads `/api/v0/stats/locations` with the `GOATCOUNTER_TOKEN` repository secret and writes `_data/visitors.yml`.
+2. Jekyll builds the site and `_includes/visitor-map.html` shades `_includes/world-map.svg` per country.
+3. `actions/deploy-pages` publishes the built site, so nothing is committed back to the repository.
 
-### License
+This requires the repository's Pages publishing source to be set to **GitHub Actions** (Settings -> Pages -> Build and deployment -> Source).
 
-[GNU GPL v3](https://github.com/bk2dcradle/researcher/blob/gh-pages/LICENSE)
+`_includes/world-map.svg` was generated from [Natural Earth](https://www.naturalearthdata.com) 110m country data, which is in the public domain.
+
+## License
+
+[GNU GPL v3](LICENSE), inherited from the upstream theme.

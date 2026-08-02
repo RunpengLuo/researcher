@@ -39,6 +39,7 @@ Teaching Assistant, School of Computing \\
 Across 5 courses on 6 semesters.
 
 ## Talks
+- NCI ITCR Meeting, lightning talk, Cold Spring Harbor, Jul 2026.
 - 27th Annual International Conference on Research in Computational Molecular Biology, (RECOMB 2023), [Link](https://www.youtube.com/watch?v=MHNAZ8OkyUI), Istanbul, Turkey, Apr 2023.
 
 

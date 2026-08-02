@@ -1,0 +1,59 @@
+{%- comment -%}
+Shades _includes/world-map.svg from _data/visitors.yml and adds a hover tooltip.
+Bands are absolute counts, not fractions of the maximum: visitor counts are
+long-tailed, so scaling against the top country flattens everything else.
+{%- endcomment -%}
+{%- assign v = site.data.visitors -%}
+{%- if v.countries.size > 0 -%}
+<style>
+{% for c in v.countries -%}
+#{{ c.code | downcase }}{fill:{% if c.count > 20 %}#0013de{% elsif c.count > 5 %}#4a56e6{% elsif c.count > 1 %}#8f97ef{% else %}#c8ccf7{% endif %}}
+{% endfor -%}
+</style>
+<div class="map-wrap">
+{% include world-map.svg %}
+<div id="map-tooltip" class="map-tooltip" hidden></div>
+</div>
+
+<p class="map-legend">
+    <small>
+        visitors per country:
+        <span class="swatch swatch-1"></span> 1
+        <span class="swatch swatch-2"></span> 2-5
+        <span class="swatch swatch-3"></span> 6-20
+        <span class="swatch swatch-4"></span> 21+
+        &mdash; {{ v.total }} visitors from {{ v.countries.size }} countries{% if v.updated %}, updated {{ v.updated | date: "%b %-d, %Y" }}{% endif %}
+    </small>
+</p>
+
+<script>
+(function () {
+    var counts = { {% for c in v.countries %}"{{ c.code | downcase }}": {{ c.count }}{% unless forloop.last %}, {% endunless %}{% endfor %} };
+    var svg = document.querySelector(".map-wrap .world-map");
+    var tip = document.getElementById("map-tooltip");
+    if (!svg || !tip) { return; }
+
+    function show(target, x, y) {
+        var n = counts[target.id] || 0;
+        tip.textContent = target.getAttribute("data-name") + ": " + n + (n === 1 ? " visitor" : " visitors");
+        tip.hidden = false;
+        var box = svg.parentNode.getBoundingClientRect();
+        tip.style.left = (x - box.left) + "px";
+        tip.style.top = (y - box.top) + "px";
+    }
+
+    svg.addEventListener("mousemove", function (e) {
+        if (e.target.tagName === "path") { show(e.target, e.clientX, e.clientY); }
+        else { tip.hidden = true; }
+    });
+    svg.addEventListener("mouseleave", function () { tip.hidden = true; });
+    svg.addEventListener("touchstart", function (e) {
+        var t = e.touches[0];
+        var el = document.elementFromPoint(t.clientX, t.clientY);
+        if (el && el.tagName === "path") { show(el, t.clientX, t.clientY); }
+    }, { passive: true });
+})();
+</script>
+{%- else -%}
+<p><small>No visitor statistics yet.</small></p>
+{%- endif -%}

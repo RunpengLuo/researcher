@@ -2,6 +2,5 @@
 
 source "https://rubygems.org"
 
-gem "researcher"
-
 gem "jekyll"
+gem "jekyll-feed"
