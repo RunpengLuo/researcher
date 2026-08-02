@@ -8,7 +8,7 @@ The design is derived from the [researcher](https://github.com/ankitsultana/rese
 
 - [Local development](#local-development)
 - [Content layout](#content-layout)
-- [Adding a blog post](#adding-a-blog-post)
+- [Adding a note or tutorial](#adding-a-note-or-tutorial)
 - [Analytics and visitor map](#analytics-and-visitor-map)
 - [License](#license)
 
@@ -29,8 +29,8 @@ bundle exec jekyll serve --livereload   # http://127.0.0.1:4000/researcher/
 
 | Path | Purpose |
 | --- | --- |
-| `index.md`, `resume.md`, `publications.md`, `softwares.md`, `blogs.md`, `contact.md` | Pages; each renders at `/researcher/<name>` |
-| `_posts/` | Blog posts, listed automatically on the Blogs page |
+| `index.md`, `resume.md`, `softwares.md`, `blogs.md`, `contact.md` | Pages; each renders at `/researcher/<name>` |
+| `files/docs/` | Notes and tutorials, rendered as pages and linked from the Blogs page |
 | `_layouts/` | `default.html` (site chrome) and `post.html` (post title and date) |
 | `_sass/`, `css/main.scss` | Styles; the hyperlink accent color is `$accent` in `_sass/vars.scss` |
 | `files/` | CV PDF, profile photo, and notes under `files/docs/` |
@@ -38,18 +38,20 @@ bundle exec jekyll serve --livereload   # http://127.0.0.1:4000/researcher/
 
 Navigation entries come from `nav` in `_config.yml`. The entry named `About` is special-cased in `_layouts/default.html` and its `link` is used verbatim; every other entry is prefixed with the site URL and base URL.
 
-## Adding a blog post
+## Adding a note or tutorial
 
-Create `_posts/YYYY-MM-DD-name.md` with front matter, and it appears on the Blogs page automatically:
+Create `files/docs/YYYY-MM-DD-name.md` with front matter, then link it from the relevant list in `blogs.md`:
 
 ```yaml
 ---
 layout: post
-title: "Post title"
+title: "Note title"
 date: 2024-03-23
 location: Princeton, NJ, USA
 ---
 ```
+
+It renders at `/researcher/files/docs/YYYY-MM-DD-name.html`. Short one-line updates go under `## Posts` at the top of `blogs.md` instead.
 
 ## Analytics and visitor map
 

@@ -2,21 +2,22 @@
 layout: default
 ---
 
-I always want to record the things I’ve learned and the good books I’ve read (or continue to read). Here, I share some of my favorite book titles, personal study notes, and short tutorials. Feel free to read and share them if you find them useful.
+Here I casually post some personal notes & thoughts.
 
 ---
 
-## Study Notes
+## Posts
+
+---
+
+## Notes
 
 * Bioinformatics Algorithms (from [this book](https://www.bioinformaticsalgorithms.org))
     * [Chapter 1. Genome Replication](files/docs/Bioinformatics_Algorithms___Chapter_1.pdf) <small>Dec 26, 2024</small>
 
----
-
-## Tutorials
-
-{% for post in site.posts %}* [{{ post.title }}]({{ site.baseurl }}{{ post.url }}) <small>{{ post.date | date: "%b %-d, %Y" }}</small>
-{% endfor %}
+* Softwares
+    * [Docker Image for Python](files/docs/2024-03-23-dockerC1.html) <small>Mar 23, 2024</small>
+    * [Learning Rust](files/docs/2024-03-21-rustC0.html) <small>Mar 21, 2024</small>
 
 ---
 
