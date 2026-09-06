@@ -18,7 +18,8 @@ Advisors: [Dr. Ben Raphael](https://www.cs.princeton.edu/~braphael/)
 **Australian National University, Canberra, ACT, Australia** \\
 Bachelor of Advanced Computing (Research and Development) (Honours) \\
 February 2020 - December 2023 \\
-Advisors: [Dr. Yu Lin](https://users.cecs.anu.edu.au/~u1024708/) and [Dr. Benjamin Schwessinger](https://biology.anu.edu.au/people/academics/benjamin-schwessinger)
+Advisors: [Dr. Yu Lin (林宇)](https://users.cecs.anu.edu.au/~u1024708/) and [Dr. Benjamin Schwessinger](https://biology.anu.edu.au/people/academics/benjamin-schwessinger) \\
+Honours Thesis: [Graph Model and Algorithms for Haplotype-resolved Assembly](files/Honours_Thesis.pdf)
 
 <!-- **Strathfield South High School, Sydney, Australia** \\
 High School Certificate (HSC) \\
